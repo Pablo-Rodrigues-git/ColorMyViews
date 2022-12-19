@@ -22,7 +22,12 @@ class MainActivity : AppCompatActivity() {
                 box_three_text,
                 box_four_text,
                 box_five_text,
-                constraint_layout
+                constraint_layout,
+                red_button,
+                blue_button,
+                yellow_button,
+                green_button,
+                purple_button
             )
 
         for (item in clickableViews) {
@@ -33,14 +38,19 @@ class MainActivity : AppCompatActivity() {
     private fun makeColored(view: View) {
         when (view.id) {
 
-            // Boxes using Color class colors for background
-            R.id.box_one_text -> view.setBackgroundColor(Color.DKGRAY)
-            R.id.box_two_text -> view.setBackgroundColor(Color.GRAY)
-
             // Boxes using Android color resources for background
+            R.id.box_one_text -> view.setBackgroundResource(R.color.my_green)
+            R.id.box_two_text -> view.setBackgroundResource(R.color.teal_200)
             R.id.box_three_text -> view.setBackgroundResource(android.R.color.holo_green_light)
             R.id.box_four_text -> view.setBackgroundResource(android.R.color.holo_green_dark)
             R.id.box_five_text -> view.setBackgroundResource(android.R.color.holo_green_light)
+
+            // Boxes using custom colors for background
+            R.id.red_button -> box_three_text.setBackgroundResource(R.color.my_red)
+            R.id.blue_button -> box_five_text.setBackgroundResource(R.color.my_blue)
+            R.id.yellow_button -> box_four_text.setBackgroundResource(R.color.my_yellow)
+            R.id.green_button -> box_five_text.setBackgroundResource(R.color.my_green)
+            R.id.purple_button -> box_five_text.setBackgroundResource(R.color.my_purple)
 
             else -> view.setBackgroundColor(Color.LTGRAY)
         }
